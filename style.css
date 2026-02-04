@@ -38,36 +38,24 @@ padding:40px 20px 60px;
 background:linear-gradient(#ffffff,#eef2ff);
 }
 
-/* Logo tight spacing */
 .logo-container{
-display:inline-block;
-padding:6px 10px;
+padding:6px;
 margin-bottom:5px;
 }
-.logo-container img{
-max-width:200px;
-height:auto;
-}
+.logo-container img{max-width:200px;}
 
-/* Typography */
-.hero h1{
-font-family:'Montserrat';
-font-size:2.4rem;
-margin-bottom:6px;
-}
+.hero h1{font-family:'Montserrat';font-size:2.4rem;margin-bottom:6px;}
 .hero p{margin-bottom:18px;}
 
-/* Button */
 .btn{
 background:var(--blue);
 color:white;
 padding:12px 26px;
 border-radius:30px;
+border:none;
 font-weight:bold;
-text-decoration:none;
-transition:transform .2s;
+cursor:pointer;
 }
-.btn:hover{transform:scale(1.05);}
 
 /* Background */
 .background{
@@ -97,14 +85,46 @@ background:white;
 padding:16px;
 border-radius:12px;
 box-shadow:0 4px 12px rgba(0,0,0,0.1);
-transition:transform .2s;
 }
-.card:hover,.price:hover{transform:translateY(-4px);}
 
 .highlight{border:3px solid var(--blue);}
 
+/* Form */
+.row{
+display:flex;
+gap:10px;
+}
+.row input{flex:1;}
+
+textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+input{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.direct-mail{
+margin-top:15px;
+font-size:0.9rem;
+}
+
 /* Audio */
-audio{width:100%;margin-top:10px;border-radius:10px;}
+audio{width:100%;margin-top:10px;}
+
+/* Footer */
+footer{
+text-align:center;
+padding:22px;
+background:var(--dark);
+color:white;
+}
 
 /* Floating CTA */
 .floating-cta{
@@ -117,22 +137,13 @@ padding:14px 22px;
 border-radius:40px;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 8px 25px rgba(0,0,0,0.25);
-}
-
-/* Footer */
-footer{
-text-align:center;
-padding:22px;
-background:var(--dark);
-color:white;
 }
 
 /* Animation */
 .animate{opacity:0;transform:translateY(30px);transition:0.8s;}
 .animate.visible{opacity:1;transform:translateY(0);}
 
-/* Dark mode */
+/* Dark Mode */
 body.dark-mode{background:#0f172a;color:white;}
 body.dark-mode section{background:rgba(15,23,42,0.95);}
 body.dark-mode .card,
@@ -141,5 +152,5 @@ body.dark-mode .sample{background:#1e293b;}
 
 @media(max-width:768px){
 .hero h1{font-size:2rem;}
-.navbar ul{flex-direction:column;}
+.row{flex-direction:column;}
 }
