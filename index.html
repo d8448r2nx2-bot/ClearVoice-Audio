@@ -3,24 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>ClearVoice-Audio – Podcast Editing & Postproduktion</title>
-<meta name="description" content="ClearVoice-Audio: Professionelle Podcast-Postproduktion, Editing, Mastering & Audio-Optimierung für Creator & Unternehmen.">
+<meta name="description" content="ClearVoice-Audio: Professionelle Podcast-Postproduktion, Editing & Mastering für Creator & Unternehmen.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- SEO Open Graph -->
-<meta property="og:title" content="ClearVoice-Audio | Podcast Editing">
-<meta property="og:description" content="Professionelle Podcast-Bearbeitung mit Hörproben & Paketen.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://clearvoice-audio.de/">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- Navigation -->
 <nav class="navbar">
   <ul>
     <li><a href="#home">Start</a></li>
@@ -32,97 +24,55 @@
   </ul>
 </nav>
 
-<!-- Logo Section -->
 <section class="logo-section">
   <img src="logo.png" alt="ClearVoice-Audio Logo" class="logo">
 </section>
 
-<!-- Hero -->
 <header id="home" class="hero">
   <h1>Podcast Editing auf Profi-Niveau</h1>
-  <p>Klarer, verständlicher und sendefertiger Sound für deine Episoden.</p>
+  <p>Klarer, verständlicher und sendefertiger Sound.</p>
   <a href="#contact" class="btn">Kostenloses Kennenlerngespräch</a>
 </header>
 
-<!-- Background Wrapper -->
-<div class="background-wrapper">
+<!-- Background starts here -->
+<div class="background">
 
-<!-- Leistungen -->
-<section id="services" class="services">
+<section id="services">
   <h2>Unsere Leistungen</h2>
-
-  <div class="service-box">
-    <h3>Editing & Schnitt</h3>
-    <p>Pausen entfernen, Flow optimieren, störende Geräusche bereinigen.</p>
-  </div>
-
-  <div class="service-box">
-    <h3>Audio Mastering</h3>
-    <p>EQ, Kompression, Lautheit nach Podcast-Standard.</p>
-  </div>
-
-  <div class="service-box">
-    <h3>Intros / Outros</h3>
-    <p>Professionelles Branding für deinen Podcast.</p>
-  </div>
-
-  <div class="service-box">
-    <h3>Optional: SEO & Clips</h3>
-    <p>Show Notes, Transkripte & Social Media Versionen.</p>
+  <div class="grid">
+    <div class="card">Editing & Schnitt</div>
+    <div class="card">Audio Mastering</div>
+    <div class="card">Intros & Outros</div>
+    <div class="card">SEO & Social Clips</div>
   </div>
 </section>
 
-<!-- Hörproben -->
-<section id="samples" class="samples">
+<section id="samples">
   <h2>Hörproben</h2>
-
-  <article class="sample">
-    <h3>Beispiel 1</h3>
-    <audio controls src="audio/raw1.mp3"></audio>
-    <audio controls src="audio/edited1.mp3"></audio>
-  </article>
-
-  <article class="sample">
-    <h3>Beispiel 2</h3>
-    <audio controls src="audio/raw2.mp3"></audio>
-    <audio controls src="audio/edited2.mp3"></audio>
-  </article>
+  <audio controls src="audio/raw1.mp3"></audio>
+  <audio controls src="audio/edited1.mp3"></audio>
 </section>
 
-<!-- Preise -->
-<section id="prices" class="pricing">
+<section id="prices">
   <h2>Preise</h2>
-
-  <div class="price">
-    <h3>Starter</h3>
-    <p>4 Folgen / Monat – 350€</p>
-  </div>
-
-  <div class="price highlight">
-    <h3>Pro</h3>
-    <p>600–900€ / Monat</p>
-  </div>
-
-  <div class="price">
-    <h3>Premium</h3>
-    <p>Custom Retainer</p>
+  <div class="grid">
+    <div class="price">Starter – 350€</div>
+    <div class="price highlight">Pro – 600–900€</div>
+    <div class="price">Premium – Custom</div>
   </div>
 </section>
 
-<!-- Über mich -->
-<section id="about" class="about">
+<section id="about">
   <h2>Über mich</h2>
-  <p>Tontechniker & Audio-Engineer mit Fokus auf Podcast-Postproduktion und professionellen Sound.</p>
+  <p>Tontechniker & Audio Engineer spezialisiert auf Podcast-Postproduktion.</p>
 </section>
 
-<!-- Kontakt -->
-<section id="contact" class="contact">
+<section id="contact">
   <h2>Kontakt</h2>
-
-  <form action="mailto:deine@email.de" method="post">
-    <input required type="text" placeholder="Name">
-    <input required type="email" placeholder="Email">
-    <textarea required placeholder="Nachricht"></textarea>
+  <form>
+    <input placeholder="Name" required>
+    <input placeholder="Email" required>
+    <textarea placeholder="Nachricht" required></textarea>
     <button class="btn">Absenden</button>
   </form>
 </section>
@@ -130,9 +80,8 @@
 </div>
 
 <footer>
-  <p>© 2026 ClearVoice-Audio</p>
+  © 2026 ClearVoice-Audio
 </footer>
 
 </body>
 </html>
-
