@@ -89,3 +89,52 @@ body.dark-mode .btn { background: var(--blue); }
   .hero h1{ font-size:2rem; } 
   .navbar ul{ flex-direction:column; }
 }
+
+/* ========================= */
+/* Dark Mode Fix */
+body.dark-mode {
+  background: #0f172a;
+  color: #f3f6ff;
+}
+
+/* Text in Sections */
+body.dark-mode section {
+  background: rgba(15, 23, 42, 0.95);
+  color: #f3f6ff;
+}
+
+/* Karten & Boxen */
+body.dark-mode .card,
+body.dark-mode .price,
+body.dark-mode .testimonial,
+body.dark-mode .sample {
+  background: #1e293b;
+  color: #f3f6ff;
+}
+
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffffff;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #1e293b;
+  color: #f3f6ff;
+  border: 1px solid #334155;
+}
+
+/* FAQ Dropdown */
+body.dark-mode details {
+  background: #1e293b;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Footer */
+body.dark-mode footer {
+  background: #020617;
+}
