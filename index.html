@@ -7,37 +7,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
 
+<!-- Open Graph -->
+<meta property="og:title" content="ClearVoice-Audio | Podcast Editing">
+<meta property="og:description" content="Professionelle Podcast-Bearbeitung mit Hörproben & Paketen.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clearvoice-audio.de/">
+<meta property="og:image" content="logo.png">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<!-- Structured Data (FAQ, Business) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ClearVoice-Audio",
+  "url": "https://clearvoice-audio.de",
+  "logo": "https://clearvoice-audio.de/logo.png",
+  "sameAs": ["https://www.linkedin.com/", "https://twitter.com/"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "deine@email.de",
+    "contactType": "Customer Service"
+  }
+}
+</script>
+
+</head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar">
   <ul>
     <li><a href="#home">Start</a></li>
     <li><a href="#services">Leistungen</a></li>
     <li><a href="#samples">Hörproben</a></li>
     <li><a href="#prices">Preise</a></li>
-    <li><a href="#about">Über mich</a></li>
+    <li><a href="#testimonials">Kunden</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Kontakt</a></li>
+    <li><button id="darkModeToggle">🌙</button></li>
   </ul>
 </nav>
 
+<!-- Logo -->
 <section class="logo-section">
   <img src="logo.png" alt="ClearVoice-Audio Logo" class="logo">
 </section>
 
-<header id="home" class="hero">
+<!-- Hero -->
+<header id="home" class="hero animate">
   <h1>Podcast Editing auf Profi-Niveau</h1>
   <p>Klarer, verständlicher und sendefertiger Sound.</p>
   <a href="#contact" class="btn">Kostenloses Kennenlerngespräch</a>
 </header>
 
-<!-- Background starts here -->
+<!-- Background Wrapper -->
 <div class="background">
 
-<section id="services">
+<!-- Services -->
+<section id="services" class="animate">
   <h2>Unsere Leistungen</h2>
   <div class="grid">
     <div class="card">Editing & Schnitt</div>
@@ -47,13 +79,25 @@
   </div>
 </section>
 
-<section id="samples">
+<!-- Hörproben -->
+<section id="samples" class="animate">
   <h2>Hörproben</h2>
-  <audio controls src="audio/raw1.mp3"></audio>
-  <audio controls src="audio/edited1.mp3"></audio>
+  <div class="grid">
+    <div class="sample">
+      <h3>Beispiel 1</h3>
+      <audio controls src="audio/raw1.mp3"></audio>
+      <audio controls src="audio/edited1.mp3"></audio>
+    </div>
+    <div class="sample">
+      <h3>Beispiel 2</h3>
+      <audio controls src="audio/raw2.mp3"></audio>
+      <audio controls src="audio/edited2.mp3"></audio>
+    </div>
+  </div>
 </section>
 
-<section id="prices">
+<!-- Pricing -->
+<section id="prices" class="animate">
   <h2>Preise</h2>
   <div class="grid">
     <div class="price">Starter – 350€</div>
@@ -62,18 +106,42 @@
   </div>
 </section>
 
-<section id="about">
-  <h2>Über mich</h2>
-  <p>Tontechniker & Audio Engineer spezialisiert auf Podcast-Postproduktion.</p>
+<!-- Testimonials Carousel -->
+<section id="testimonials" class="animate">
+  <h2>Kundenstimmen</h2>
+  <div class="carousel">
+    <div class="testimonial">
+      <p>"Top Sound, schnelle Umsetzung – absolute Empfehlung!"</p>
+      <span>– Anna</span>
+    </div>
+    <div class="testimonial">
+      <p>"Klare Audioqualität und tolles Mastering."</p>
+      <span>– Max</span>
+    </div>
+  </div>
 </section>
 
-<section id="contact">
-  <h2>Kontakt</h2>
+<!-- FAQ -->
+<section id="faq" class="animate">
+  <h2>FAQ</h2>
+  <details>
+    <summary>Wie schnell wird eine Episode bearbeitet?</summary>
+    <p>In der Regel innerhalb von 48 Stunden, je nach Umfang.</p>
+  </details>
+  <details>
+    <summary>Bieten Sie Intros / Outros an?</summary>
+    <p>Ja, wir integrieren Jingles, Intro/Outro und Branding Musik.</p>
+  </details>
+</section>
+
+<!-- Kontakt -->
+<section id="contact" class="animate">
+  <h2>Kontakt & Buchung</h2>
   <form>
     <input placeholder="Name" required>
     <input placeholder="Email" required>
     <textarea placeholder="Nachricht" required></textarea>
-    <button class="btn">Absenden</button>
+    <a class="btn" href="https://calendly.com/deinprofil" target="_blank">Termin buchen</a>
   </form>
 </section>
 
@@ -83,5 +151,6 @@
   © 2026 ClearVoice-Audio
 </footer>
 
+<script src="scripts.js"></script>
 </body>
 </html>
