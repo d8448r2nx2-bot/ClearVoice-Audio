@@ -26,7 +26,7 @@ body {
 /* Hero */
 .hero {
   text-align:center;
-  padding:140px 20px 80px 20px; /* Oben genug Abstand für Navbar */
+  padding:140px 20px 80px 20px;
   background: var(--light);
   position: relative;
 }
