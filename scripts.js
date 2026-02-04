@@ -1,4 +1,4 @@
-// Animation
+// Scroll animation
 const animated=document.querySelectorAll('.animate');
 const observer=new IntersectionObserver(e=>{
 e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');});
@@ -9,7 +9,7 @@ animated.forEach(el=>observer.observe(el));
 document.getElementById('darkModeToggle')
 .addEventListener('click',()=>document.body.classList.toggle('dark-mode'));
 
-// Audio single play
+// Only one audio plays
 const audios=document.querySelectorAll("audio");
 audios.forEach(a=>{
 a.addEventListener("play",()=>{
