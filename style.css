@@ -157,3 +157,23 @@ body.dark-mode audio {
 .navbar a.active {
   color: var(--blue);
 }
+
+/* Floating CTA */
+.floating-cta {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--blue);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  z-index: 999;
+  transition: transform 0.2s ease;
+}
+
+.floating-cta:hover {
+  transform: scale(1.05);
+}
