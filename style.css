@@ -153,3 +153,7 @@ audio {
 body.dark-mode audio {
   filter: drop-shadow(0 3px 6px rgba(0,0,0,0.6));
 }
+
+.navbar a.active {
+  color: var(--blue);
+}
