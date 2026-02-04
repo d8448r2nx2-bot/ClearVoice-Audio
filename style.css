@@ -142,3 +142,14 @@ body.dark-mode details {
 body.dark-mode footer {
   background: #020617;
 }
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+}
+
+body.dark-mode audio {
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.6));
+}
