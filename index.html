@@ -14,126 +14,128 @@
 <body>
 
 <nav class="navbar">
-<ul>
-<li><a href="#home">Start</a></li>
-<li><a href="#services">Leistungen</a></li>
-<li><a href="#samples">Hörproben</a></li>
-<li><a href="#prices">Preise</a></li>
-<li><a href="#contact">Kontakt</a></li>
-<li><button id="darkModeToggle">🌙</button></li>
-</ul>
+  <div class="nav-left">
+    <a href="#home" class="logo-nav" aria-label="Zur Startseite">
+      <img src="logo.png" alt="ClearVoice-Audio Logo">
+    </a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#home">Start</a></li>
+    <li><a href="#services">Leistungen</a></li>
+    <li><a href="#samples">Hörproben</a></li>
+    <li><a href="#prices">Preise</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+    <li>
+      <button id="darkModeToggle" aria-pressed="false" aria-label="Dark Mode umschalten">🌙</button>
+    </li>
+  </ul>
 </nav>
 
 <header id="home" class="hero animate">
-
-<div class="logo-container">
-<img src="logo.png" alt="ClearVoice-Audio Logo">
-</div>
-
-<h1>Professionelles Podcast Editing</h1>
-<p>Klarer, verständlicher und sendefertiger Sound.</p>
-<a href="#contact" class="btn">Kostenlose Analyse sichern</a>
-
+  <h1>Professionelles Podcast Editing</h1>
+  <p>Klarer, verständlicher und sendefertiger Sound.</p>
+  <a href="#contact" class="btn">Kostenlose Analyse sichern</a>
 </header>
 
 <div class="background">
 
-<section id="services" class="animate">
-<h2>Leistungen</h2>
+  <section id="services" class="animate">
+    <h2>Leistungen</h2>
 
-<div class="grid">
+    <div class="grid services-grid">
 
-<div class="card">
-<h3>Editing & Schnitt</h3>
-<p>Entfernung von Pausen, Versprechern und Störgeräuschen. Optimierter Gesprächsfluss für professionelle Episoden.</p>
-</div>
+      <div class="card">
+        <h3>Editing & Schnitt</h3>
+        <p>Entfernung von Pausen, Versprechern und Störgeräuschen. Optimierter Gesprächsfluss für professionelle Episoden.</p>
+      </div>
 
-<div class="card">
-<h3>Mastering</h3>
-<p>EQ, Kompression und Lautheitsanpassung nach Spotify/Apple Podcast Standards.</p>
-</div>
+      <div class="card">
+        <h3>Mastering</h3>
+        <p>EQ, Kompression und Lautheitsanpassung nach Spotify/Apple Podcast Standards.</p>
+      </div>
 
-<div class="card">
-<h3>Intros & Outros</h3>
-<p>Individuelle Branding-Elemente für Wiedererkennungswert.</p>
-</div>
+      <div class="card">
+        <h3>Intros & Outros</h3>
+        <p>Individuelle Branding-Elemente für Wiedererkennungswert.</p>
+      </div>
 
-<div class="card">
-<h3>Content Extras</h3>
-<p>Show Notes, Kapitelmarken und Social Clips optional verfügbar.</p>
-</div>
+      <div class="card">
+        <h3>Content Extras</h3>
+        <p>Show Notes, Kapitelmarken und Social Clips optional verfügbar.</p>
+      </div>
 
-</div>
-</section>
+    </div>
+  </section>
 
-<section id="samples" class="animate">
-<h2>Hörproben</h2>
+  <section id="samples" class="animate">
+    <h2>Hörproben</h2>
 
-<div class="sample">
-<p>Rohaufnahme → Bearbeitet</p>
-<audio controls src="audio.raw01.mp3"></audio>
-<audio controls src="audio.edited01.mp3"></audio>
-</div>
+    <div class="sample">
+      <p>Rohaufnahme → Bearbeitet</p>
+      <audio controls src="audio.raw01.mp3"></audio>
+      <audio controls src="audio.edited01.mp3"></audio>
+    </div>
 
-<div class="sample">
-<p>Rohaufnahme → Bearbeitet</p>
-<audio controls src="audio.raw02.mp3"></audio>
-<audio controls src="audio.edited02.mp3"></audio>
-</div>
+    <div class="sample">
+      <p>Rohaufnahme → Bearbeitet</p>
+      <audio controls src="audio.raw02.mp3"></audio>
+      <audio controls src="audio.edited02.mp3"></audio>
+    </div>
 
-</section>
+  </section>
 
-<section id="prices" class="animate">
-<h2>Preise</h2>
+  <section id="prices" class="animate">
+    <h2>Preise</h2>
 
-<div class="grid">
+    <div class="grid prices-grid">
 
-<div class="price">
-<h3>Starter</h3>
-<p>4 Episoden / Monat</p>
-<p>Editing + Mastering</p>
-<p><strong>350€</strong></p>
-</div>
+      <div class="price">
+        <h3>Starter</h3>
+        <p>4 Episoden / Monat</p>
+        <p>Editing + Mastering</p>
+        <p><strong>350€</strong></p>
+      </div>
 
-<div class="price highlight">
-<h3>Pro</h3>
-<p>Wöchentliche Betreuung</p>
-<p>Editing + Mastering + Extras</p>
-<p><strong>600–900€</strong></p>
-</div>
+      <div class="price highlight">
+        <h3>Pro</h3>
+        <p>Wöchentliche Betreuung</p>
+        <p>Editing + Mastering + Extras</p>
+        <p><strong>600–900€</strong></p>
+      </div>
 
-<div class="price">
-<h3>Premium</h3>
-<p>Individuelle Retainer</p>
-<p>Full Service Produktion</p>
-<p><strong>Auf Anfrage</strong></p>
-</div>
+      <div class="price">
+        <h3>Premium</h3>
+        <p>Individuelle Retainer</p>
+        <p>Full Service Produktion</p>
+        <p><strong>Auf Anfrage</strong></p>
+      </div>
 
-</div>
-</section>
+    </div>
+  </section>
 
-<section id="contact" class="animate">
-<h2>Kontakt</h2>
+  <section id="contact" class="animate">
+    <h2>Kontakt</h2>
 
-<form action="mailto:fiedler.audio@gmail.com" method="post" enctype="text/plain">
+    <form action="mailto:fiedler.audio@gmail.com" method="post" enctype="text/plain">
 
-<div class="row">
-<input required type="text" name="Name" placeholder="Name">
-<input required type="email" name="Email" placeholder="Email">
-</div>
+      <div class="row">
+        <input required type="text" name="Name" placeholder="Name">
+        <input required type="email" name="Email" placeholder="Email">
+      </div>
 
-<textarea required name="Nachricht" placeholder="Nachricht"></textarea>
+      <textarea required name="Nachricht" placeholder="Nachricht"></textarea>
 
-<button class="btn">Termin sichern</button>
+      <button class="btn">Termin sichern</button>
 
-</form>
+    </form>
 
-<p class="direct-mail">
-Oder direkt schreiben:  
-<a href="mailto:fiedler.audio@gmail.com">fiedler.audio@gmail.com</a>
-</p>
+    <p class="direct-mail">
+      Oder direkt schreiben:
+      <a href="mailto:fiedler.audio@gmail.com">fiedler.audio@gmail.com</a>
+    </p>
 
-</section>
+  </section>
 
 </div>
 
