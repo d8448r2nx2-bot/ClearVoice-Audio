@@ -3,8 +3,10 @@ html{scroll-behavior:smooth;}
 :root{
   --blue:#0b4cff;
   --dark:#0f172a;
+  --muted:#6b7280;
 }
 
+/* Reset */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
@@ -19,30 +21,66 @@ body{
   position:sticky;
   top:0;
   background:var(--dark);
-  padding:10px;
+  padding:10px 18px;
   z-index:100;
-}
-.navbar ul{
   display:flex;
-  justify-content:center;
-  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+/* Left logo */
+.logo-nav{
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none;
+}
+.logo-nav img{
+  width:56px;
+  height:auto;
+  border-radius:10px;
+  padding:6px;
+  background:rgba(255,255,255,0.9);
+  box-shadow:0 8px 22px rgba(2,6,23,0.12);
+  display:block;
+}
+
+/* Nav links */
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:16px;
   list-style:none;
 }
-.navbar a{color:white;text-decoration:none;font-weight:600;}
-.navbar a.active{color:var(--blue);}
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+.nav-links a.active{color:var(--blue);}
+
+/* Dark mode toggle (styled so it blends with topbar) */
+#darkModeToggle{
+  background:transparent;
+  color:white;
+  border:1px solid rgba(255,255,255,0.08);
+  padding:8px 10px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:1rem;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+#darkModeToggle:focus{outline:2px solid rgba(11,76,255,0.25);}
 
 /* Hero */
 .hero{
   text-align:center;
-  padding:40px 20px 60px;
+  padding:46px 20px 60px;
   background:linear-gradient(rgba(255,255,255,0.85), rgba(238,242,255,0.85));
 }
-
-.logo-container{
-  padding:6px;
-  margin-bottom:5px;
-}
-.logo-container img{max-width:200px;}
 
 .hero h1{font-family:'Montserrat';font-size:2.4rem;margin-bottom:6px;}
 .hero p{margin-bottom:18px;}
@@ -55,6 +93,8 @@ body{
   border:none;
   font-weight:bold;
   cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
 }
 
 /* Background */
@@ -74,18 +114,36 @@ section{
   backdrop-filter: blur(8px); /* schöner Glass-Effekt */
 }
 
-/* Grid */
+/* Grid generic */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:18px;
+}
+
+/* Services grid: 1 col small, 2 col medium, 4 col large */
+.services-grid{
+  grid-template-columns:1fr;
+}
+@media(min-width:600px){
+  .services-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media(min-width:1100px){
+  .services-grid{ grid-template-columns:repeat(4,1fr); }
+}
+
+/* Prices grid: keep flexible (2 columns on medium) */
+.prices-grid{
+  grid-template-columns:1fr;
+}
+@media(min-width:700px){
+  .prices-grid{ grid-template-columns:repeat(3,1fr); }
 }
 
 .card,.price,.sample{
   background:rgba(255,255,255,0.25); /* transparent */
   padding:16px;
   border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
   backdrop-filter: blur(8px);
 }
 
@@ -121,6 +179,7 @@ input{
 .direct-mail{
   margin-top:15px;
   font-size:0.9rem;
+  color:var(--muted);
 }
 
 /* Audio */
@@ -134,17 +193,24 @@ footer{
   color:white;
 }
 
-/* Floating CTA */
+/* Floating CTA (now left) */
 .floating-cta{
   position:fixed;
   bottom:25px;
-  right:25px;
+  left:25px;
   background:var(--blue);
   color:white;
   padding:14px 22px;
   border-radius:40px;
   font-weight:bold;
   text-decoration:none;
+  z-index:120;
+  transition:opacity .25s, transform .25s;
+}
+.floating-cta.hidden{
+  opacity:0;
+  transform:translateY(20px);
+  pointer-events:none;
 }
 
 /* Animation */
@@ -157,24 +223,34 @@ body.dark-mode{
   color:white;
 }
 
+/* make sections a bit darker in dark-mode */
 body.dark-mode section,
 body.dark-mode .card,
 body.dark-mode .price,
 body.dark-mode .sample{
-  background:rgba(15,23,42,0.25); /* transparent Dark Mode */
+  background:rgba(15,23,42,0.25);
   color:white;
   backdrop-filter: blur(8px);
 }
 
+/* logo background adapts to dark mode */
+body.dark-mode .logo-nav img{
+  background:rgba(255,255,255,0.06);
+  box-shadow:0 6px 18px rgba(2,6,23,0.6);
+}
+
+/* dark mode inputs */
 body.dark-mode input,
 body.dark-mode textarea{
   background:rgba(15,23,42,0.25);
   color:white;
-  border:1px solid rgba(255,255,255,0.5);
+  border:1px solid rgba(255,255,255,0.08);
 }
 
-/* Responsive */
+/* Responsive tuning */
 @media(max-width:768px){
-.hero h1{font-size:2rem;}
-.row{flex-direction:column;}
+  .hero h1{font-size:2rem;}
+  .row{flex-direction:column;}
+  .nav-links{gap:8px;}
+  .logo-nav img{width:48px;}
 }
