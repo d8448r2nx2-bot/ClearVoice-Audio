@@ -67,11 +67,18 @@ navLinks.forEach(link => {
   });
 });
 
-// highlight active nav link based on midpoint of viewport
+// highlight active nav link based on midpoint of viewport, plus top/bottom edge cases
 const sectionsForNav = Array.from(document.querySelectorAll('header[id], section[id]'));
 
 function highlightCurrentNav() {
-  const navH = navbar ? navbar.offsetHeight : 0;
+  // Top-of-page: make "home" active
+  if (window.pageYOffset < 8) {
+    navLinks.forEach(l => l.classList.remove('active'));
+    const homeLink = document.querySelector('.nav-link[href="#home"]');
+    if (homeLink) homeLink.classList.add('active');
+    return;
+  }
+
   const viewportCenter = window.innerHeight / 2;
   let closest = {id: null, distance: Infinity};
 
