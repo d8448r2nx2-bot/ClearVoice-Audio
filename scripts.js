@@ -1,3 +1,4 @@
+// Scroll reveal
 const animated=document.querySelectorAll('.animate');
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
@@ -6,16 +7,17 @@ if(e.isIntersecting)e.target.classList.add('visible');
 },{threshold:0.15});
 animated.forEach(el=>observer.observe(el));
 
-const toggle=document.getElementById('darkModeToggle');
-toggle.onclick=()=>{
-const on=document.body.classList.toggle('dark-mode');
-toggle.textContent=on?'☀️':'🌙';
+// Dark mode
+document.getElementById('darkModeToggle').onclick=()=>{
+document.body.classList.toggle('dark-mode');
 };
 
-const contact=document.querySelector('#contact');
-const cta=document.querySelector('.floating-cta');
-new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-cta.classList.toggle('hidden',e.isIntersecting);
+// Audio: stop others when playing
+const audios=document.querySelectorAll("audio");
+audios.forEach(a=>{
+a.addEventListener("play",()=>{
+audios.forEach(other=>{
+if(other!==a) other.pause();
 });
-},{threshold:0.3}).observe(contact);
+});
+});
