@@ -5,10 +5,11 @@ html{scroll-behavior:smooth;}
 --dark:#0f172a;
 }
 
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-margin:0;
 font-family:'Open Sans',sans-serif;
-background:url("background.png") center/cover fixed;
+line-height:1.6;
 color:#1f2937;
 }
 
@@ -16,8 +17,8 @@ color:#1f2937;
 .navbar{
 position:sticky;
 top:0;
-backdrop-filter:blur(12px);
-background:rgba(15,23,42,0.6);
+background:rgba(15,23,42,0.7);
+backdrop-filter:blur(10px);
 padding:10px;
 z-index:100;
 }
@@ -27,11 +28,14 @@ display:flex;
 justify-content:center;
 gap:18px;
 list-style:none;
-margin:0;
-padding:0;
+align-items:center;
 }
 
-.nav-links a{color:white;text-decoration:none;font-weight:600;}
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
 
 #darkModeToggle{
 background:transparent;
@@ -45,107 +49,88 @@ cursor:pointer;
 /* Hero */
 .hero{
 text-align:center;
-padding:20px 20px 60px;
+padding:20px 20px 40px;
+background:transparent;
 color:white;
-position:relative;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.2),rgba(0,0,0,.6));
-z-index:-1;
 }
 
 .hero-logo{
-height:150px;
 display:flex;
 justify-content:center;
-align-items:center;
 margin-bottom:20px;
 }
 
 .hero-logo img{
-width:340px;
+width:320px;
 filter:drop-shadow(0 0 4px white);
-animation:logoFade 1.2s ease-out;
 }
 
-@keyframes logoFade{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-.hero h1,.hero p{color:white;text-shadow:0 2px 10px rgba(0,0,0,.7);}
-
-.btn{
-background:var(--blue);
+.hero h1,
+.hero p{
 color:white;
-padding:12px 26px;
-border-radius:30px;
-border:none;
-font-weight:bold;
-cursor:pointer;
+}
+
+/* Background */
+.background{
+background:url("background.png") center/cover fixed;
+padding:60px 20px;
 }
 
 /* Sections */
 section{
 max-width:1000px;
-margin:60px auto;
+margin:auto;
+margin-bottom:45px;
 background:rgba(255,255,255,0.25);
 padding:30px;
 border-radius:14px;
-backdrop-filter:blur(8px);
+backdrop-filter: blur(8px);
 }
 
-h2{text-align:center;margin-bottom:20px;}
-
 /* Grid */
-.grid{display:grid;gap:18px;}
-.services-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
-.prices-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.grid{
+display:grid;
+gap:18px;
+}
+
+.services-grid{
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+.prices-grid{
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
 
 .card,.price,.sample{
 background:rgba(255,255,255,0.25);
-padding:18px;
+padding:16px;
 border-radius:12px;
 box-shadow:0 4px 12px rgba(0,0,0,0.1);
-backdrop-filter:blur(8px);
 }
 
-/* Audio full width */
-.sample audio{
-width:100%;
-display:block;
-margin-top:10px;
-}
-
-/* Contact form */
-.contact-form{
-max-width:800px;
-margin:auto;
-}
-
+/* Form */
 .row{
 display:flex;
 gap:10px;
 }
 
-.row input{flex:1;}
-
 textarea,input{
 width:100%;
 padding:12px;
+margin-top:10px;
 border-radius:8px;
-border:1px solid rgba(255,255,255,0.5);
-background:rgba(255,255,255,0.25);
-backdrop-filter:blur(6px);
+border:1px solid rgba(255,255,255,0.6);
+background:rgba(255,255,255,0.6);
+color:#000;
+}
+
+/* Audio */
+audio{
+width:100%;
 margin-top:10px;
 }
 
-textarea{min-height:120px;}
-
+/* Footer */
 footer{
 text-align:center;
 padding:22px;
@@ -153,21 +138,55 @@ background:rgba(15,23,42,0.85);
 color:white;
 }
 
+/* Floating CTA */
+.floating-cta{
+position:fixed;
+bottom:25px;
+left:25px;
+background:var(--blue);
+color:white;
+padding:14px 22px;
+border-radius:40px;
+font-weight:bold;
+text-decoration:none;
+z-index:120;
+transition:.3s;
+}
+
+.floating-cta.hidden{
+opacity:0;
+pointer-events:none;
+}
+
 /* Animation */
 .animate{
 opacity:0;
-transform:translateY(40px);
-transition:1s ease;
+transform:translateY(30px);
+transition:0.8s;
 }
+
 .animate.visible{
 opacity:1;
 transform:translateY(0);
 }
 
-/* Dark mode */
-body.dark-mode{color:white;}
-body.dark-mode section{background:rgba(15,23,42,0.25);}
+/* Dark Mode */
+body.dark-mode section,
+body.dark-mode .card,
+body.dark-mode .price,
+body.dark-mode .sample{
+background:rgba(15,23,42,0.25);
+color:white;
+}
 
+body.dark-mode textarea,
+body.dark-mode input{
+background:rgba(15,23,42,0.4);
+color:white;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+/* Responsive */
 @media(max-width:768px){
 .row{flex-direction:column;}
 .hero-logo img{width:240px;}
