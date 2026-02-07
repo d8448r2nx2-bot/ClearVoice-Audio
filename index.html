@@ -1,98 +1,155 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>ClearVoice-Audio – Professionelles Podcast Editing</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
 
+<link rel="icon" href="favicon.ico">
+</head>
 <body>
 
 <nav class="navbar">
-<ul class="nav-links">
-<li><a href="#home">Start</a></li>
-<li><a href="#services">Leistungen</a></li>
-<li><a href="#samples">Hörproben</a></li>
-<li><a href="#prices">Preise</a></li>
-<li><a href="#contact">Kontakt</a></li>
-<li><button id="darkModeToggle">🌙</button></li>
-</ul>
+  <ul class="nav-links">
+    <li><a href="#home">Start</a></li>
+    <li><a href="#services">Leistungen</a></li>
+    <li><a href="#samples">Hörproben</a></li>
+    <li><a href="#prices">Preise</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+    <li><button id="darkModeToggle" aria-pressed="false" aria-label="Dark Mode umschalten">🌙</button></li>
+  </ul>
 </nav>
 
 <header id="home" class="hero animate">
+  <div class="hero-logo">
+    <img src="logo.png" alt="ClearVoice-Audio Logo">
+  </div>
 
-<div class="hero-logo">
-<img src="logo.png" alt="Logo">
-</div>
+  <h1>Professionelles Podcast Editing</h1>
+  <p>Klarer, verständlicher und sendefertiger Sound.</p>
 
-<h1>Professionelles Podcast Editing</h1>
-<p>Klarer, verständlicher und sendefertiger Sound.</p>
-<a href="#contact" class="btn">Kostenlose Analyse sichern</a>
-
+  <a href="#contact" class="btn header-cta" id="headerCTA">Kostenlose Analyse sichern</a>
 </header>
 
+<!-- content container (visual padding + glass sections) -->
 <div class="background">
 
-<section id="services" class="animate">
-<h2>Leistungen</h2>
+  <section id="services" class="animate">
+    <h2>Leistungen</h2>
 
-<div class="grid services-grid">
-<div class="card"><h3>Editing & Schnitt</h3><p>Optimierter Gesprächsfluss.</p></div>
-<div class="card"><h3>Mastering</h3><p>Spotify/Apple Standards.</p></div>
-<div class="card"><h3>Intros & Outros</h3><p>Branding-Elemente.</p></div>
-<div class="card"><h3>Content Extras</h3><p>Show Notes & Clips.</p></div>
-</div>
+    <div class="grid services-grid">
+      <div class="card">
+        <h3>Editing & Schnitt</h3>
+        <p>Präziser Schnitt: Entfernen von Pausen, Versprechern und Füllwörtern. Timing-Anpassungen, Crossfades und Rauschreduktion für einen natürlichen Gesprächsfluss.</p>
+      </div>
 
-</section>
+      <div class="card">
+        <h3>Mastering</h3>
+        <p>Lautheitsanpassung (LUFS), EQ, Multiband-Kompression und Limiting nach Apple/Spotify-Standards für konstante Wiedergabequalität.</p>
+      </div>
 
-<section id="samples" class="animate">
-<h2>Hörproben</h2>
+      <div class="card">
+        <h3>Intros & Outros</h3>
+        <p>Musikalische Intros/Outros, Jingles und Voice-Branding — geliefert als sendefertige Assets in gewünschtem Format.</p>
+      </div>
 
-<div class="sample">
-<p>Rohaufnahme → Bearbeitet</p>
-<audio controls src="audio.raw01.mp3"></audio>
-<audio controls src="audio.edited01.mp3"></audio>
-</div>
+      <div class="card">
+        <h3>Content Extras</h3>
+        <p>Show Notes, Kapitelmarken (mp3/mp4), Social Clips (Audiogramme) und Kurzversionen für Social Media auf Wunsch.</p>
+      </div>
+    </div>
+  </section>
 
-<div class="sample">
-<p>Rohaufnahme → Bearbeitet</p>
-<audio controls src="audio.raw02.mp3"></audio>
-<audio controls src="audio.edited02.mp3"></audio>
-</div>
+  <section id="samples" class="animate">
+    <h2>Hörproben</h2>
 
-</section>
+    <div class="sample">
+      <p>Rohaufnahme → Bearbeitet</p>
+      <audio controls src="audio.raw01.mp3"></audio>
+      <audio controls src="audio.edited01.mp3"></audio>
+    </div>
 
-<section id="contact" class="animate">
-<h2>Kontakt</h2>
+    <div class="sample">
+      <p>Rohaufnahme → Bearbeitet</p>
+      <audio controls src="audio.raw02.mp3"></audio>
+      <audio controls src="audio.edited02.mp3"></audio>
+    </div>
+  </section>
 
-<form action="mailto:fiedler.audio@gmail.com">
+  <section id="prices" class="animate">
+    <h2>Preise</h2>
 
-<div class="row">
-<input required type="text" placeholder="Name">
-<input required type="email" placeholder="Email">
-</div>
+    <div class="grid prices-grid">
+      <!-- Starter -->
+      <div class="price">
+        <h3>Starter</h3>
+        <p><strong>4 Episoden / Monat</strong></p>
+        <ul>
+          <li>Editing (Schnitt & Fades)</li>
+          <li>Basic Mastering (Lautheit, EQ)</li>
+          <li>Formatierung & Export (mp3/ogg)</li>
+        </ul>
+        <p><strong>350€ / Monat</strong></p>
+      </div>
 
-<textarea required placeholder="Nachricht"></textarea>
+      <!-- Pro -->
+      <div class="price highlight">
+        <h3>Pro</h3>
+        <p><strong>Wöchentliche Betreuung</strong></p>
+        <ul>
+          <li>Alles aus Starter</li>
+          <li>Advanced Mastering (Multiband, Stereo-Image)</li>
+          <li>Show Notes & Kapitelmarken</li>
+          <li>Social Clips (1–2 per Episode)</li>
+          <li>Priorisierte Lieferung (SLA)</li>
+        </ul>
+        <p><strong>600–900€ / Monat</strong></p>
+      </div>
 
-<button class="btn">Termin sichern</button>
+      <!-- Premium -->
+      <div class="price">
+        <h3>Premium</h3>
+        <p><strong>Individueller Retainer</strong></p>
+        <ul>
+          <li>Full-Service Produktion</li>
+          <li>Konzept & Formatentwicklung</li>
+          <li>Redaktionelle Unterstützung & Coaching</li>
+          <li>Onsite/remote Zusammenarbeit nach Vereinbarung</li>
+        </ul>
+        <p><strong>Auf Anfrage</strong></p>
+      </div>
+    </div>
+  </section>
 
-</form>
+  <section id="contact" class="animate">
+    <h2>Kontakt</h2>
 
-<p class="direct-mail">
-Oder sende direkt eine Email an:
-<a href="mailto:fiedler.audio@gmail.com">fiedler.audio@gmail.com</a>
-</p>
+    <form action="mailto:fiedler.audio@gmail.com" method="post" enctype="text/plain" class="contact-form">
+      <div class="row">
+        <input required type="text" name="Name" placeholder="Name">
+        <input required type="email" name="Email" placeholder="Email">
+      </div>
 
-</section>
+      <textarea required name="Nachricht" placeholder="Nachricht"></textarea>
 
-</div>
+      <button type="submit" class="btn">Termin sichern</button>
+    </form>
+
+    <p class="direct-mail">
+      Oder sende direkt eine E-Mail an:
+      <a href="mailto:fiedler.audio@gmail.com">fiedler.audio@gmail.com</a>
+    </p>
+  </section>
+
+</div><!-- .background -->
 
 <footer>© 2026 ClearVoice-Audio</footer>
 
-<a href="#contact" class="floating-cta" id="floatingCTA">Analyse sichern</a>
+<!-- Floating CTA (bleibt sichtbar, bis Kontakt erscheint) -->
+<a href="#contact" class="floating-cta" id="floatingCTA">Kostenlose Analyse sichern</a>
 
 <script src="scripts.js"></script>
 </body>
