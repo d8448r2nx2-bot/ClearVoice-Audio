@@ -116,7 +116,7 @@ body{
   z-index:-1;
 }
 
-/* logo sizing + improved glow */
+/* logo sizing + sharper, thicker white outline + glow */
 .hero-logo{
   height:200px;
   display:flex;
@@ -129,11 +129,16 @@ body{
   width:460px;
   max-width:100%;
   display:block;
-  /* stronger cinematic glow: white core + blue halo + soft large blur */
-  filter:
-    drop-shadow(0 0 10px rgba(255,255,255,0.65))
-    drop-shadow(0 0 28px rgba(11,76,255,0.45))
-    drop-shadow(0 0 60px rgba(11,76,255,0.18));
+  /* keep the original image sharp and add a crisp white outline + colored glow */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* crisp white border (sharp) via spread box-shadow, then softer blue halos */
+  box-shadow:
+    0 0 0 6px rgba(255,255,255,0.95),  /* thick sharp white outline */
+    0 0 20px rgba(11,76,255,0.45),     /* medium blue glow */
+    0 0 56px rgba(11,76,255,0.18);     /* large soft halo */
+  /* remove blur filters that made it look soft/unclear */
+  filter: none;
 }
 
 /* hero text: always white and NOT affected by hover */
@@ -316,7 +321,7 @@ footer{
 @media (max-width:768px){
   .row{ flex-direction: column; }
   .hero-logo{ height:140px; margin-bottom:16px; }
-  .hero-logo img{ width:300px; transform:translateY(-4px); }
+  .hero-logo img{ width:300px; transform:translateY(-4px); box-shadow: 0 0 0 5px rgba(255,255,255,0.95), 0 0 16px rgba(11,76,255,0.38), 0 0 40px rgba(11,76,255,0.16); }
   .nav-links{ gap:12px; }
   .nav-links a{ padding:12px 16px; font-size:1rem; }
   .btn{ padding:14px 20px; font-size:1rem; }
