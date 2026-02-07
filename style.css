@@ -81,7 +81,7 @@ body{
   transform: scaleX(1);
 }
 
-/* larger tap targets on mobile: increase padding */
+/* larger tap targets on mobile */
 @media (max-width:768px){
   :root{ --nav-padding: 10px 14px; }
 }
@@ -133,17 +133,13 @@ body{
   max-width:100%;
 }
 
-/* hero text: always white, turns blue on hover over hero */
+/* hero text: always white and NOT affected by hover */
 .hero h1,
 .hero p{
   color:#ffffff;
   margin:6px 0;
   text-shadow: 0 2px 10px rgba(0,0,0,0.55);
-  transition: color .18s ease;
-}
-.hero:hover h1,
-.hero:hover p{
-  color: var(--blue);
+  transition: none;
 }
 
 /* header CTA subtle hover/pulse */
@@ -169,7 +165,15 @@ section{
 }
 
 /* headings */
-h2{ text-align:center; margin-bottom:18px; color: #0f172a; }
+h2{
+  text-align:center;
+  margin-bottom:18px;
+  color: #0f172a;
+  transition: color .15s ease;
+}
+
+/* ensure h2 becomes white in dark mode */
+body.dark-mode h2{ color: #fff; }
 
 /* GRID layouts */
 .grid{ display:grid; gap:18px; }
@@ -305,13 +309,12 @@ footer{
   color:#fff;
 }
 
-/* responsiveness */
+/* responsiveness adjustments */
 @media (max-width:768px){
   .row{ flex-direction: column; }
   .hero-logo{ height:110px; margin-bottom:14px; }
   .hero-logo img{ width:220px; transform:translateY(-4px); }
   .nav-links{ gap:12px; }
-  /* larger tap targets */
   .nav-links a{ padding:12px 16px; font-size:1rem; }
   .btn{ padding:14px 20px; font-size:1rem; }
   .floating-cta{ left:18px; bottom:18px; padding:12px 18px; }
