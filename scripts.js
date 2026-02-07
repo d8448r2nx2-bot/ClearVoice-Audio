@@ -1,4 +1,4 @@
-// Scroll animation
+// Scroll reveal
 const animated=document.querySelectorAll('.animate');
 const observer=new IntersectionObserver(e=>{
 e.forEach(i=>{
