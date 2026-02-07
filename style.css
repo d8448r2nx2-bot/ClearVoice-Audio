@@ -116,21 +116,24 @@ body{
   z-index:-1;
 }
 
-/* logo sizing + spacing */
+/* logo sizing + improved glow */
 .hero-logo{
-  height:140px;
+  height:200px;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:18px;
-  overflow:hidden;
+  margin-bottom:22px;
+  overflow:visible;
 }
 .hero-logo img{
-  width:320px;
-  transform: translateY(-6px);
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.28));
-  display:block;
+  width:460px;
   max-width:100%;
+  display:block;
+  /* stronger cinematic glow: white core + blue halo + soft large blur */
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,0.65))
+    drop-shadow(0 0 28px rgba(11,76,255,0.45))
+    drop-shadow(0 0 60px rgba(11,76,255,0.18));
 }
 
 /* hero text: always white and NOT affected by hover */
@@ -142,7 +145,7 @@ body{
   transition: none;
 }
 
-/* header CTA subtle hover/pulse */
+/* header CTA subtle hover */
 .header-cta{
   display:inline-block;
   margin-top:12px;
@@ -312,8 +315,8 @@ footer{
 /* responsiveness adjustments */
 @media (max-width:768px){
   .row{ flex-direction: column; }
-  .hero-logo{ height:110px; margin-bottom:14px; }
-  .hero-logo img{ width:220px; transform:translateY(-4px); }
+  .hero-logo{ height:140px; margin-bottom:16px; }
+  .hero-logo img{ width:300px; transform:translateY(-4px); }
   .nav-links{ gap:12px; }
   .nav-links a{ padding:12px 16px; font-size:1rem; }
   .btn{ padding:14px 20px; font-size:1rem; }
