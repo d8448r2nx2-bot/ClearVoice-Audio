@@ -25,14 +25,8 @@ if(o!==a){o.pause();o.currentTime=0;}
 const contact=document.getElementById("contact");
 const cta=document.getElementById("floatingCTA");
 
-const ctaObserver=new IntersectionObserver(entries=>{
+new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-cta.classList.add("hidden");
-}else{
-cta.classList.remove("hidden");
-}
+cta.classList.toggle("hidden", entry.isIntersecting);
 });
-});
-
-ctaObserver.observe(contact);
+}).observe(contact);
