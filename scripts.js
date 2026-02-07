@@ -1,4 +1,3 @@
-// Scroll reveal premium
 const animated=document.querySelectorAll('.animate');
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
@@ -7,14 +6,12 @@ if(e.isIntersecting)e.target.classList.add('visible');
 },{threshold:0.15});
 animated.forEach(el=>observer.observe(el));
 
-// Dark mode toggle
 const toggle=document.getElementById('darkModeToggle');
 toggle.onclick=()=>{
 const on=document.body.classList.toggle('dark-mode');
 toggle.textContent=on?'☀️':'🌙';
 };
 
-// Hide CTA on contact
 const contact=document.querySelector('#contact');
 const cta=document.querySelector('.floating-cta');
 new IntersectionObserver(entries=>{
