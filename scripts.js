@@ -63,13 +63,37 @@ navLinks.forEach(link => {
   });
 });
 
-// In case user navigates to anchors (page load with hash), adjust scroll-margin-top dynamically
-function updateScrollMargin() {
+// highlight active nav link based on scroll position
+const sectionsForNav = Array.from(document.querySelectorAll('header[id], section[id]'));
+
+function highlightCurrentNav() {
   const navH = navbar ? navbar.offsetHeight : 0;
-  const elems = document.querySelectorAll('header, section');
-  elems.forEach(el => {
+  let currentId = sectionsForNav[0] ? sectionsForNav[0].id : null;
+  sectionsForNav.forEach(s => {
+    const top = s.getBoundingClientRect().top;
+    if (top - navH - 20 <= 0) currentId = s.id;
+  });
+
+  navLinks.forEach(l => l.classList.remove('active'));
+  if (currentId) {
+    const activeLink = document.querySelector('.nav-link[href="#' + currentId + '"]');
+    if (activeLink) activeLink.classList.add('active');
+  }
+}
+
+window.addEventListener('scroll', highlightCurrentNav);
+window.addEventListener('load', () => {
+  // set initial scroll margin for sections (so anchor jumps don't hide headings)
+  const navH = navbar ? navbar.offsetHeight : 0;
+  document.querySelectorAll('header[id], section[id]').forEach(el=>{
     el.style.scrollMarginTop = (navH + 12) + 'px';
   });
-}
-window.addEventListener('load', updateScrollMargin);
-window.addEventListener('resize', updateScrollMargin);
+
+  highlightCurrentNav();
+});
+window.addEventListener('resize', () => {
+  document.querySelectorAll('header[id], section[id]').forEach(el=>{
+    el.style.scrollMarginTop = (navbar.offsetHeight + 12) + 'px';
+  });
+  highlightCurrentNav();
+});
