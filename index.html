@@ -1,156 +1,257 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ClearVoice-Audio – Professionelles Podcast Editing</title>
+/* base */
+html { scroll-behavior: smooth; }
+:root{
+  --blue:#0b4cff;
+  --dark:#0f172a;
+  --glass: rgba(255,255,255,0.20);
+}
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+*{box-sizing:border-box;margin:0;padding:0;}
 
-<link rel="icon" href="favicon.ico">
-</head>
-<body>
+body{
+  font-family: 'Open Sans', sans-serif;
+  line-height:1.6;
+  color:#1f2937;
+  /* BACKGROUND ON BODY so header is transparent over it */
+  background: url("background.png") center/cover fixed no-repeat;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-<nav class="navbar">
-  <ul class="nav-links">
-    <li><a href="#home">Start</a></li>
-    <li><a href="#services">Leistungen</a></li>
-    <li><a href="#samples">Hörproben</a></li>
-    <li><a href="#prices">Preise</a></li>
-    <li><a href="#contact">Kontakt</a></li>
-    <li><button id="darkModeToggle" aria-pressed="false" aria-label="Dark Mode umschalten">🌙</button></li>
-  </ul>
-</nav>
+/* NAVBAR (glass) */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:400;
+  background: rgba(15,23,42,0.78);
+  backdrop-filter: blur(10px);
+  padding:10px 16px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-<header id="home" class="hero animate">
-  <div class="hero-logo">
-    <img src="logo.png" alt="ClearVoice-Audio Logo">
-  </div>
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  margin:0;
+  padding:0;
+}
 
-  <h1>Professionelles Podcast Editing</h1>
-  <p>Klarer, verständlicher und sendefertiger Sound.</p>
+.nav-links a{
+  color: #fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:6px 10px;
+  display:inline-block;
+}
 
-  <a href="#contact" class="btn header-cta" id="headerCTA">Kostenlose Analyse sichern</a>
-</header>
+/* Dark-mode toggle: blend with topbar (no white box) */
+#darkModeToggle{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:1rem;
+}
 
-<!-- content container (visual padding + glass sections) -->
-<div class="background">
+/* HERO (completely transparent) */
+.hero{
+  text-align:center;
+  padding:20px 20px 40px;
+  background: transparent; /* important */
+  color: #fff;
+  position:relative;
+}
 
-  <section id="services" class="animate">
-    <h2>Leistungen</h2>
+/* subtle cinematic overlay on the hero area for readability while still transparent */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.12), rgba(0,0,0,0.04));
+  z-index:-1;
+}
 
-    <div class="grid services-grid">
-      <div class="card">
-        <h3>Editing & Schnitt</h3>
-        <p>Präziser Schnitt: Entfernen von Pausen, Versprechern und Füllwörtern. Timing-Anpassungen, Crossfades und Rauschreduktion für einen natürlichen Gesprächsfluss.</p>
-      </div>
+/* logo sizing + spacing: keep distance above and below equal */
+.hero-logo{
+  height:140px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+  overflow:hidden;
+}
+.hero-logo img{
+  width:320px;
+  transform: translateY(-6px); /* cut small top space visually */
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.28));
+  display:block;
+  max-width:100%;
+}
 
-      <div class="card">
-        <h3>Mastering</h3>
-        <p>Lautheitsanpassung (LUFS), EQ, Multiband-Kompression und Limiting nach Apple/Spotify-Standards für konstante Wiedergabequalität.</p>
-      </div>
+/* hero text: always white */
+.hero h1,
+.hero p{
+  color:#ffffff;
+  margin:6px 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+}
 
-      <div class="card">
-        <h3>Intros & Outros</h3>
-        <p>Musikalische Intros/Outros, Jingles und Voice-Branding — geliefert als sendefertige Assets in gewünschtem Format.</p>
-      </div>
+/* header CTA (in-hero) */
+.header-cta{
+  display:inline-block;
+  margin-top:12px;
+}
 
-      <div class="card">
-        <h3>Content Extras</h3>
-        <p>Show Notes, Kapitelmarken (mp3/mp4), Social Clips (Audiogramme) und Kurzversionen für Social Media auf Wunsch.</p>
-      </div>
-    </div>
-  </section>
+/* .background container (wraps sections) */
+.background{
+  padding:60px 20px;
+}
 
-  <section id="samples" class="animate">
-    <h2>Hörproben</h2>
+/* Sections (glass panels) */
+section{
+  max-width:1100px;
+  margin: 0 auto 45px;
+  background: rgba(255,255,255,0.25);
+  padding:30px;
+  border-radius:14px;
+  backdrop-filter: blur(8px);
+}
 
-    <div class="sample">
-      <p>Rohaufnahme → Bearbeitet</p>
-      <audio controls src="audio.raw01.mp3"></audio>
-      <audio controls src="audio.edited01.mp3"></audio>
-    </div>
+/* headings */
+h2{ text-align:center; margin-bottom:18px; color: #0f172a; }
 
-    <div class="sample">
-      <p>Rohaufnahme → Bearbeitet</p>
-      <audio controls src="audio.raw02.mp3"></audio>
-      <audio controls src="audio.edited02.mp3"></audio>
-    </div>
-  </section>
+/* GRID layouts */
+.grid{ display:grid; gap:18px; }
 
-  <section id="prices" class="animate">
-    <h2>Preise</h2>
+/* SERVICES: 4 in a row on desktop, 2 on tablet, 1 on mobile */
+.services-grid{
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width:1000px){
+  .services-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width:600px){
+  .services-grid{ grid-template-columns: 1fr; }
+}
 
-    <div class="grid prices-grid">
-      <!-- Starter -->
-      <div class="price">
-        <h3>Starter</h3>
-        <p><strong>4 Episoden / Monat</strong></p>
-        <ul>
-          <li>Editing (Schnitt & Fades)</li>
-          <li>Basic Mastering (Lautheit, EQ)</li>
-          <li>Formatierung & Export (mp3/ogg)</li>
-        </ul>
-        <p><strong>350€ / Monat</strong></p>
-      </div>
+/* PRICES: ensure the price boxes are in one row on desktop (3 columns) */
+.prices-grid{
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+}
+@media (max-width:1000px){
+  .prices-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width:680px){
+  .prices-grid{ grid-template-columns: 1fr; }
+}
 
-      <!-- Pro -->
-      <div class="price highlight">
-        <h3>Pro</h3>
-        <p><strong>Wöchentliche Betreuung</strong></p>
-        <ul>
-          <li>Alles aus Starter</li>
-          <li>Advanced Mastering (Multiband, Stereo-Image)</li>
-          <li>Show Notes & Kapitelmarken</li>
-          <li>Social Clips (1–2 per Episode)</li>
-          <li>Priorisierte Lieferung (SLA)</li>
-        </ul>
-        <p><strong>600–900€ / Monat</strong></p>
-      </div>
+/* cards */
+.card, .price, .sample {
+  background: rgba(255,255,255,0.25);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 8px 26px rgba(2,6,23,0.06);
+}
 
-      <!-- Premium -->
-      <div class="price">
-        <h3>Premium</h3>
-        <p><strong>Individueller Retainer</strong></p>
-        <ul>
-          <li>Full-Service Produktion</li>
-          <li>Konzept & Formatentwicklung</li>
-          <li>Redaktionelle Unterstützung & Coaching</li>
-          <li>Onsite/remote Zusammenarbeit nach Vereinbarung</li>
-        </ul>
-        <p><strong>Auf Anfrage</strong></p>
-      </div>
-    </div>
-  </section>
+/* highlighted price */
+.price.highlight{
+  border: 3px solid var(--blue);
+}
 
-  <section id="contact" class="animate">
-    <h2>Kontakt</h2>
+/* sample audio — full width */
+.sample audio{ width:100%; display:block; margin-top:10px; }
 
-    <form action="mailto:fiedler.audio@gmail.com" method="post" enctype="text/plain" class="contact-form">
-      <div class="row">
-        <input required type="text" name="Name" placeholder="Name">
-        <input required type="email" name="Email" placeholder="Email">
-      </div>
+/* contact form — centered and readable */
+.contact-form{ max-width:820px; margin:0 auto; }
+.row{ display:flex; gap:10px; }
+.row input{ flex:1; }
 
-      <textarea required name="Nachricht" placeholder="Nachricht"></textarea>
+/* inputs — light by default for readability over glass */
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.92);
+  color:#0f172a;
+}
 
-      <button type="submit" class="btn">Termin sichern</button>
-    </form>
+/* buttons */
+.btn{
+  background: var(--blue);
+  color:#fff;
+  padding:12px 22px;
+  border-radius:30px;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+  display:inline-block;
+}
 
-    <p class="direct-mail">
-      Oder sende direkt eine E-Mail an:
-      <a href="mailto:fiedler.audio@gmail.com">fiedler.audio@gmail.com</a>
-    </p>
-  </section>
+/* floating CTA */
+.floating-cta{
+  position:fixed;
+  left:25px;
+  bottom:25px;
+  z-index:250;
+  background: var(--blue);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:36px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow: 0 8px 20px rgba(11,76,255,0.18);
+  transition: opacity .25s, transform .2s;
+}
+.floating-cta.hidden{ opacity:0; pointer-events:none; transform: translateY(8px); }
 
-</div><!-- .background -->
+/* animate reveal */
+.animate{ opacity:0; transform: translateY(24px); transition: 900ms cubic-bezier(.2,.65,.2,1); }
+.animate.visible{ opacity:1; transform: translateY(0); }
 
-<footer>© 2026 ClearVoice-Audio</footer>
+/* dark mode — keep background image visible; only glass panels change */
+body.dark-mode{
+  color:white;
+}
 
-<!-- Floating CTA (bleibt sichtbar, bis Kontakt erscheint) -->
-<a href="#contact" class="floating-cta" id="floatingCTA">Kostenlose Analyse sichern</a>
+/* glass panels adapt in dark mode */
+body.dark-mode section,
+body.dark-mode .card,
+body.dark-mode .price,
+body.dark-mode .sample{
+  background: rgba(15,23,42,0.22);
+  color: #fff;
+}
 
-<script src="scripts.js"></script>
-</body>
-</html>
+/* inputs in dark mode */
+body.dark-mode input,
+body.dark-mode textarea{
+  background: rgba(15,23,42,0.40);
+  color: #fff;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* footer */
+footer{
+  text-align:center;
+  padding:22px;
+  background: rgba(15,23,42,0.9);
+  color:#fff;
+}
+
+/* responsiveness */
+@media (max-width:768px){
+  .row{ flex-direction: column; }
+  .hero-logo{ height:110px; margin-bottom:14px; }
+  .hero-logo img{ width:220px; transform:translateY(-4px); }
+  .nav-links{ gap:12px; }
+}
