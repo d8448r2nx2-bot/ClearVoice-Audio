@@ -17,8 +17,8 @@ color:#1f2937;
 .navbar{
 position:sticky;
 top:0;
-background:rgba(15,23,42,0.8);
-backdrop-filter:blur(10px);
+background:rgba(15,23,42,0.75);
+backdrop-filter:blur(12px);
 padding:10px;
 z-index:100;
 }
@@ -31,7 +31,22 @@ list-style:none;
 align-items:center;
 }
 
-/* HERO TRANSPARENT */
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+#darkModeToggle{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+color:white;
+padding:6px 10px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* HERO */
 .hero{
 text-align:center;
 padding:20px 20px 40px;
@@ -71,36 +86,22 @@ backdrop-filter: blur(8px);
 }
 
 /* Grid */
-.grid{
-display:grid;
-gap:18px;
-}
+.grid{display:grid;gap:18px;}
 
-.services-grid{
-grid-template-columns:repeat(4,1fr);
-}
-
+.services-grid{grid-template-columns:repeat(4,1fr);}
 @media(max-width:1000px){
-.services-grid{
-grid-template-columns:repeat(2,1fr);
-}
+.services-grid{grid-template-columns:repeat(2,1fr);}
 }
 
-.prices-grid{
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-}
-
-.card,.price,.sample{
+/* Cards */
+.card,.sample{
 background:rgba(255,255,255,0.25);
 padding:16px;
 border-radius:12px;
 }
 
 /* Form */
-.row{
-display:flex;
-gap:10px;
-}
+.row{display:flex;gap:10px;}
 
 textarea,input{
 width:100%;
@@ -108,15 +109,24 @@ padding:12px;
 margin-top:10px;
 border-radius:8px;
 border:1px solid rgba(255,255,255,0.7);
-background:rgba(255,255,255,0.8);
+background:rgba(255,255,255,0.85);
 color:#000;
 }
 
-/* Audio */
-audio{
-width:100%;
+/* Buttons */
+.btn{
+background:var(--blue);
+color:white;
+padding:12px 26px;
+border-radius:30px;
+border:none;
+font-weight:bold;
+cursor:pointer;
 margin-top:10px;
 }
+
+/* Audio */
+audio{width:100%;margin-top:10px;}
 
 /* Floating CTA */
 .floating-cta{
@@ -132,28 +142,15 @@ text-decoration:none;
 z-index:120;
 transition:.3s;
 }
-
-.floating-cta.hidden{
-opacity:0;
-pointer-events:none;
-}
+.floating-cta.hidden{opacity:0;pointer-events:none;}
 
 /* Animation */
-.animate{
-opacity:0;
-transform:translateY(30px);
-transition:0.8s;
-}
-
-.animate.visible{
-opacity:1;
-transform:translateY(0);
-}
+.animate{opacity:0;transform:translateY(30px);transition:0.8s;}
+.animate.visible{opacity:1;transform:translateY(0);}
 
 /* Dark Mode */
 body.dark-mode section,
 body.dark-mode .card,
-body.dark-mode .price,
 body.dark-mode .sample{
 background:rgba(15,23,42,0.25);
 color:white;
