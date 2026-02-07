@@ -2,11 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>ClearVoice-Audio – Podcast Editing</title>
+<title>ClearVoice-Audio – Professionelles Podcast Editing</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="icon" href="favicon.ico">
 </head>
 
 <body>
@@ -25,15 +27,16 @@
 <header id="home" class="hero animate">
 
 <div class="hero-logo">
-<img src="logo.png" alt="Logo">
+<img src="logo.png" alt="ClearVoice-Audio Logo">
 </div>
 
 <h1>Professionelles Podcast Editing</h1>
 <p>Klarer, verständlicher und sendefertiger Sound.</p>
-
 <a href="#contact" class="btn">Kostenlose Analyse sichern</a>
 
 </header>
+
+<div class="background">
 
 <section id="services" class="animate">
 <h2>Leistungen</h2>
@@ -42,22 +45,22 @@
 
 <div class="card">
 <h3>Editing & Schnitt</h3>
-<p>Entfernung von Pausen, Versprechern und Störgeräuschen. Natürlich klingender Flow.</p>
+<p>Entfernung von Pausen, Versprechern und Störgeräuschen. Optimierter Gesprächsfluss.</p>
 </div>
 
 <div class="card">
 <h3>Mastering</h3>
-<p>Lautheitsnormen für Spotify & Apple. Klarer, druckvoller Sound.</p>
+<p>EQ, Kompression und Lautheitsanpassung nach Spotify/Apple Podcast Standards.</p>
 </div>
 
 <div class="card">
-<h3>Intros & Branding</h3>
-<p>Professionelle Intros/Outros für Wiedererkennungswert.</p>
+<h3>Intros & Outros</h3>
+<p>Individuelle Branding-Elemente für Wiedererkennungswert.</p>
 </div>
 
 <div class="card">
-<h3>Extras</h3>
-<p>Show Notes, Kapitelmarken, Social Clips optional.</p>
+<h3>Content Extras</h3>
+<p>Show Notes, Kapitelmarken und Social Clips optional verfügbar.</p>
 </div>
 
 </div>
@@ -87,9 +90,9 @@
 
 <div class="price">
 <h3>Starter</h3>
-<p>4 Episoden pro Monat</p>
+<p>4 Episoden / Monat</p>
 <p>Editing + Mastering</p>
-<p>Lautheitsoptimierung</p>
+<p>Perfekt für neue Podcasts</p>
 <p><strong>350€</strong></p>
 </div>
 
@@ -97,15 +100,15 @@
 <h3>Pro</h3>
 <p>Wöchentliche Betreuung</p>
 <p>Editing + Mastering + Extras</p>
-<p>Priorisierte Lieferung</p>
+<p>Ideal für wachsende Shows</p>
 <p><strong>600–900€</strong></p>
 </div>
 
 <div class="price">
 <h3>Premium</h3>
+<p>Individuelle Retainer</p>
 <p>Full Service Produktion</p>
-<p>Beratung & Formatentwicklung</p>
-<p>Individuelle Betreuung</p>
+<p>Persönlicher Support</p>
 <p><strong>Auf Anfrage</strong></p>
 </div>
 
@@ -115,24 +118,32 @@
 <section id="contact" class="animate">
 <h2>Kontakt</h2>
 
-<form class="contact-form">
+<form action="mailto:fiedler.audio@gmail.com" method="post" enctype="text/plain">
 
 <div class="row">
-<input type="text" placeholder="Name" required>
-<input type="email" placeholder="Email" required>
+<input required type="text" name="Name" placeholder="Name">
+<input required type="email" name="Email" placeholder="Email">
 </div>
 
-<textarea placeholder="Nachricht" required></textarea>
+<textarea required name="Nachricht" placeholder="Nachricht"></textarea>
 
 <button class="btn">Termin sichern</button>
 
 </form>
 
+<p class="direct-mail">
+Oder direkt schreiben:  
+<a href="mailto:fiedler.audio@gmail.com">fiedler.audio@gmail.com</a>
+</p>
+
 </section>
+
+</div>
 
 <footer>© 2026 ClearVoice-Audio</footer>
 
-<script src="scripts.js"></script>
+<a href="#contact" class="floating-cta" id="floatingCTA">Analyse sichern</a>
 
+<script src="scripts.js"></script>
 </body>
 </html>
