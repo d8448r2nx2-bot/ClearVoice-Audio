@@ -67,20 +67,30 @@ navLinks.forEach(link => {
   });
 });
 
-// highlight active nav link based on scroll position (keeps it updated)
+// highlight active nav link based on midpoint of viewport
 const sectionsForNav = Array.from(document.querySelectorAll('header[id], section[id]'));
 
 function highlightCurrentNav() {
   const navH = navbar ? navbar.offsetHeight : 0;
-  let currentId = sectionsForNav[0] ? sectionsForNav[0].id : null;
+  const viewportCenter = window.innerHeight / 2;
+  let closest = {id: null, distance: Infinity};
+
   sectionsForNav.forEach(s => {
-    const top = s.getBoundingClientRect().top;
-    if (top - navH - 20 <= 0) currentId = s.id;
+    const rect = s.getBoundingClientRect();
+    const sectionCenter = rect.top + rect.height / 2;
+    const distance = Math.abs(sectionCenter - viewportCenter);
+    if (distance < closest.distance) {
+      closest = { id: s.id, distance };
+    }
   });
 
+  // If user scrolled to the very bottom, ensure contact is active (covers footer case)
+  const scrolledToBottom = (window.innerHeight + window.pageYOffset) >= (document.body.offsetHeight - 4);
+  const activeId = scrolledToBottom ? 'contact' : closest.id;
+
   navLinks.forEach(l => l.classList.remove('active'));
-  if (currentId) {
-    const activeLink = document.querySelector('.nav-link[href="#' + currentId + '"]');
+  if (activeId) {
+    const activeLink = document.querySelector('.nav-link[href="#' + activeId + '"]');
     if (activeLink) activeLink.classList.add('active');
   }
 }
