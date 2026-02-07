@@ -48,14 +48,18 @@ function scrollToWithOffset(targetEl) {
   const navHeight = navbar ? navbar.offsetHeight : 0;
   const rect = targetEl.getBoundingClientRect();
   const absoluteTop = window.pageYOffset + rect.top;
-  const offset = navHeight + 12; // small breathing room
+  const offset = navHeight + 12; // breathing room
   window.scrollTo({ top: absoluteTop - offset, behavior: 'smooth' });
 }
 
-// Attach handler to nav links (prevent default jump)
+// Attach handler to nav links (prevent default jump) AND set active immediately
 navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
+    // set active class immediately
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+
     const href = link.getAttribute('href');
     if (!href || !href.startsWith('#')) return;
     const target = document.querySelector(href);
@@ -63,7 +67,7 @@ navLinks.forEach(link => {
   });
 });
 
-// highlight active nav link based on scroll position
+// highlight active nav link based on scroll position (keeps it updated)
 const sectionsForNav = Array.from(document.querySelectorAll('header[id], section[id]'));
 
 function highlightCurrentNav() {
